@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Transactions in Databases</title>
+    <style>
+        body {
+            background-color: #87CEEB; /* Sky blue background */
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #FFFDD0; /* Cream color for header text */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Text shadow for 3D effect */
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+            background-color: #8B4513; /* Brown color for the header block */
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Box shadow for 3D block effect */
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-bottom: 15px;
+        }
+        li {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow effect for list items */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Understanding Transactions in Databases</h1>
+    <p>A transaction in a database is a sequence of operations performed as a single logical unit of work. A transaction can include various operations such as:</p>
+    <ul>
+        <li>Reading data</li>
+        <li>Writing data</li>
+        <li>Updating data</li>
+        <li>Deleting data</li>
+    </ul>
+    <Center>
+    <img src="transaction.png" height="255" width="350">
+    </Center>
+    <p>A transaction is a logical unit of work in a database system that consists of a sequence of operations performed as a single unit. 
+            A transaction ensures that the database remains consistent and adheres to integrity constraints, even in cases of system failure. 
+            Transactions are crucial in database management as they help in maintaining data accuracy, reliability, and consistency. 
+            In practical applications, transactions typically involve multiple operations such as inserting, updating, deleting, or retrieving records. 
+            The primary goal of a transaction is to transition the database from one consistent state to another while following the ACID properties 
+            (Atomicity, Consistency, Isolation, Durability).</p>
+
+    <h2>ACID Properties of Transactions</h2>
+    <p>Transactions are governed by a set of properties known as ACID, which stands for:</p>
+    <ul>
+        <li><strong>Atomicity:</strong> Ensures that a transaction is treated as a single unit. All operations must succeed for the transaction to be committed; otherwise, it is rolled back, maintaining data integrity and preventing partial updates.</li>
+        <em>Example:</em> If an online order fails after payment is deducted, the payment is automatically refunded.</li><br>
+        <li><strong>Consistency:</strong> Guarantees that a transaction brings the database from one valid state to another. It ensures that all data integrity constraints are met, and if a transaction violates these rules, it will not be committed.</li>
+        <em>Example:</em> If a user books a flight ticket, the available seat count must decrease accordingly.</li><br>
+        <li><strong>Isolation:</strong> Ensures that transactions are executed independently. Even if multiple transactions occur simultaneously, the results of each transaction remain hidden from others until they are committed, preventing data inconsistencies.</li>
+        <em>Example:</em> Two users booking the same concert ticket should not both get confirmation for the last seat.</li><br>
+        <li><strong>Durability:</strong> Guarantees that once a transaction is committed, its effects are permanent. Changes made by the transaction will survive system failures, ensuring that the database remains consistent and reliable.</li>
+        <em>Example:</em> If a product is added to an e-commerce inventory, it remains there even after a system restart.</li>
+    </ul>
+    <Center>
+    <img src="ACID1.jpg" height="300" width="500">
+    </Center>
+    <h2>Conclusion</h2>
+    <p>Understanding transactions and their ACID properties is essential for anyone working with databases. These properties ensure that transactions are processed reliably, maintaining data integrity and consistency. By adhering to the ACID principles, database systems can effectively manage concurrent access and recover from failures, providing a robust environment for data management.</p>
+
+</body>
+</html>
